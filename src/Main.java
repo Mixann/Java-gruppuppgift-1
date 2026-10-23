@@ -9,34 +9,22 @@ void main() {
 
     Scanner scanner = new Scanner(System.in);
 
-    String welcome = "Hej och välkommen till cafeét!";
-    System.out.println(welcome);
-
+    System.out.println("Hej och välkommen till cafeét!");
 
     System.out.println("Hur var ditt namn?");
-    String namn = scanner.nextLine();
+    String namn = scanner.nextLine(); /* Så man kan skriva sitt namn */
 
     System.out.println("Hej " + namn);
 
+    System.out.println("Hur många koppar kaffe vill? 25kr/st?");
 
-    String dricka = "Hur många koppar kaffe vill? 25kr/st?";
-    System.out.println(dricka);
-
-    int antalKaffe = scanner.nextInt();
+    int antalKaffe = scanner.nextInt(); /* sparar antalet */
     double priskaffe = kaffe * antalKaffe;
-
-
-    System.out.println("Priset blir " + priskaffe + "kr");
-
 
     System.out.println("Vill du ha kanelbulle också? 30kr/st");
 
-
     int antalKanelbulle = scanner.nextInt();
     double priskanelbulle = kanelbulle * antalKanelbulle;
-
-    System.out.println("Priset blir " + priskanelbulle + "kr");
-
 
     System.out.println("Vill du kanske ha en macka också? 55kr/st");
 
@@ -58,28 +46,29 @@ void main() {
 
     System.out.println("Totalt: " + totalpris);
     System.out.println("Moms: " + totalprismoms);
-    System.out.println("=======================");
-    System.out.println("Tack för besöket, " + namn + "!");
 
     if (totalpris>=100) {
         System.out.println("=======================");
         System.out.println("Du har möjlighet att få 10% rabatt på hela köpet!");
-        System.out.println("Med rabatt blir totalpriset: " + totalprisrabatt);
         System.out.println("Ny Moms: " + rabattmoms);
+        System.out.println("Med rabatt blir totalpriset: " + totalprisrabatt + rabattmoms);
+
     }
 
     System.out.println("Vill ni dela på notan?");
     boolean villDela;
-            villDela = scanner.nextBoolean();
-  if (villDela) {
+    villDela = scanner.nextBoolean();
 
-    System.out.println("Med rabatt blir totalpriset: " + (totalprisrabatt) / 3);
-    System.out.println("Ny Moms: " + rabattmoms / 3); }
+  if (villDela==true) {
+    System.out.println("Med rabatt blir totalpriset: " + (rabattmoms + totalprisrabatt) / 3);
+  }
 else {
-
+      System.out.println("Ny Moms: " + rabattmoms);
     System.out.println("Med rabatt blir totalpriset: " + (totalprisrabatt));
-    System.out.println("Ny Moms: " + rabattmoms);
+
 }
+    System.out.println("=======================");
+    System.out.println("Tack för besöket, " + namn + "!");
 
     scanner.close();
     }
