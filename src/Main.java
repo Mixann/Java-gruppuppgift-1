@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+void main() {
+
+    double kaffe = 25.0;
+    double kanelbulle = 30.0;
+    double macka = 55.0;
+    double moms = 0.12;
+
+    Scanner scanner = new Scanner(System.in);
+
+    String welcome = "Hej och välkommen till cafeét!";
+    System.out.println(welcome);
+
+
+    System.out.println("Hur var ditt namn?");
+    String namn = scanner.nextLine();
+
+    System.out.println("Hej " + namn);
+
+
+    String dricka = "Hur många koppar kaffe vill? 25kr/st?";
+    System.out.println(dricka);
+
+    int antalKaffe = scanner.nextInt();
+    double priskaffe = kaffe * antalKaffe;
+
+
+    System.out.println("Priset blir " + priskaffe + "kr");
+
+
+    System.out.println("Vill du ha kanelbulle också? 30kr/st");
+
+
+    int antalKanelbulle = scanner.nextInt();
+    double priskanelbulle = kanelbulle * antalKanelbulle;
+
+    System.out.println("Priset blir " + priskanelbulle + "kr");
+
+
+    System.out.println("Vill du kanske ha en macka också? 55kr/st");
+
+    int antalMacka = scanner.nextInt();
+    double prismacka = macka * antalMacka;
+
+    double totalpris = priskaffe + priskanelbulle + prismacka;
+    double totalprismoms = (priskaffe + priskanelbulle + prismacka) * 0.12/1.12;
+    double totalprisrabatt =  (priskaffe + priskanelbulle + prismacka) * 0.9;
+    double rabattmoms =  (0.9 * (priskaffe + priskanelbulle + prismacka)) * 0.12/1.12;
+
+    System.out.println( "==== KVITTO ====" );
+    System.out.println("Kund: " + namn);
+    System.out.println("Kaffe: " + antalKaffe + "st = " + priskaffe + "kr");
+    System.out.println("Kanelbulle: " + antalKanelbulle +"st = " + priskanelbulle + "kr");
+    System.out.println("Macka: " +antalMacka + "st = " + prismacka + "kr");
+
+    System.out.println("-----------------------");
+
+    System.out.println("Totalt: " + totalpris);
+    System.out.println("Moms: " + totalprismoms);
+    System.out.println("=======================");
+    System.out.println("Tack för besöket, " + namn + "!");
+
+    if (totalpris>=100) {
+        System.out.println("=======================");
+        System.out.println("Du har möjlighet att få 10% rabatt på hela köpet!");
+        System.out.println("Med rabatt blir totalpriset: " + totalprisrabatt);
+        System.out.println("Ny Moms: " + rabattmoms);
+    }
+
+    System.out.println("Vill ni dela på notan?");
+    boolean villDela;
+            villDela = scanner.nextBoolean();
+  if (villDela) {
+
+    System.out.println("Med rabatt blir totalpriset: " + (totalprisrabatt) / 3);
+    System.out.println("Ny Moms: " + rabattmoms / 3); }
+else {
+
+    System.out.println("Med rabatt blir totalpriset: " + (totalprisrabatt));
+    System.out.println("Ny Moms: " + rabattmoms);
+}
+
+    scanner.close();
+    }
