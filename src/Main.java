@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 void main() {
 
-    double kaffe = 25.0;
-    double kanelbulle = 30.0;
-    double macka = 55.0;
-    double moms = 0.12;
+    final double kaffe = 25.0;
+    final double kanelbulle = 30.0;
+    final double macka = 55.0;
+
 
     Scanner scanner = new Scanner(System.in);
 
@@ -16,7 +16,7 @@ void main() {
 
     System.out.println("Hej " + namn);
 
-    System.out.println("Hur många koppar kaffe vill? 25kr/st?");
+    System.out.println("Hur många koppar kaffe vill ni ha? 25kr/st?");
 
     int antalKaffe = scanner.nextInt(); /* sparar antalet */
     double priskaffe = kaffe * antalKaffe;
@@ -50,9 +50,7 @@ void main() {
     if (totalpris>=100) {
         System.out.println("=======================");
         System.out.println("Du har möjlighet att få 10% rabatt på hela köpet!");
-        System.out.println("Ny Moms: " + rabattmoms);
         System.out.println("Med rabatt blir totalpriset: " + totalprisrabatt + rabattmoms);
-
     }
 
     System.out.println("Vill ni dela på notan?");
@@ -60,11 +58,11 @@ void main() {
     villDela = scanner.nextBoolean();
 
   if (villDela==true) {
-    System.out.println("Med rabatt blir totalpriset: " + (rabattmoms + totalprisrabatt) / 3);
+    System.out.println("Med rabatt blir totalpriset per person: " + (rabattmoms + totalprisrabatt) / 3);
   }
 else {
-      System.out.println("Ny Moms: " + rabattmoms);
-    System.out.println("Med rabatt blir totalpriset: " + (totalprisrabatt));
+      System.out.println("Totalt: " + totalpris);
+      System.out.println("Moms: " + totalprismoms);
 
 }
     System.out.println("=======================");
