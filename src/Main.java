@@ -17,17 +17,14 @@ void main() {
     System.out.println("Hej " + namn);
 
     System.out.println("Hur många koppar kaffe vill ni ha? 25kr/st?");
-
     int antalKaffe = scanner.nextInt(); /* sparar antalet */
     double priskaffe = kaffe * antalKaffe;
 
     System.out.println("Vill du ha kanelbulle också? 30kr/st");
-
     int antalKanelbulle = scanner.nextInt();
     double priskanelbulle = kanelbulle * antalKanelbulle;
 
     System.out.println("Vill du kanske ha en macka också? 55kr/st");
-
     int antalMacka = scanner.nextInt();
     double prismacka = macka * antalMacka;
 
